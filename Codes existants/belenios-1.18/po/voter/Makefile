@@ -1,0 +1,18 @@
+LINGUAS := $(shell cat LINGUAS)
+
+POFILES=$(addsuffix .po,$(LINGUAS))
+POTFILE=messages.pot
+
+all: dune $(POFILES)
+
+dune: LINGUAS
+	../gen-dune.sh voter < $^ > $@
+
+clean:
+	rm -f *.bak
+
+$(POTFILE): POTFILES
+	cd ../.. && ocaml-gettext --action extract --extract-pot po/voter/$@ $(shell cat $^)
+
+%.po: $(POTFILE)
+	ocaml-gettext --action merge --merge-pot $^ $@

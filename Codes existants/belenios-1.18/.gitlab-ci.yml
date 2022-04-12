@@ -1,0 +1,149 @@
+stages:
+  - test
+  - deploy
+
+build_and_test_with_preinstalled_image:
+  stage: test
+  # Image glondu/beleniosbase:YYYYMMDD-N is built by Dockerfile_base_environment
+  image: glondu/beleniosbase:20211008-1
+  script:
+    # Initialize environment
+    - source ~/env.sh
+    # Run command-line tool tests
+    - make check
+    # Compile belenios
+    - make build-release-server
+    # Start belenios web server
+    - ./demo/run-server.sh &
+    # Access the localhost web page, print page output for debug purposes, and check validity of page output
+    - first_access_index_page_output=$(wget --retry-connrefused --no-check-certificate -T 30 http://localhost:8001 -O-)
+    - echo $first_access_index_page_output
+    - if [ "$(echo \"$first_access_index_page_output\" | grep '>Belenios</a>' | wc -l)" != "1" ]; then echo "[First page access] First page access does not show a single '>Belenios</a>' text, but it should" && exit 1; else echo "[First page access] First page access shows a single '>Belenios</a>' text, as expected"; fi
+
+build_and_test_with_debian_image:
+  stage: test
+  image: ocaml/opam:debian-10-ocaml-4.11
+  script:
+    # Install required packages
+    - sudo apt-get update -qq && sudo apt-get install -y -qq build-essential libgmp-dev libpcre3-dev pkg-config m4 libssl-dev libsqlite3-dev wget ca-certificates unzip libncurses-dev zlib1g-dev jq npm rsync
+    # Install the same Opam packages that opam-bootstrap.sh installs
+    - git -C /home/opam/opam-repository remote set-url origin https://github.com/ocaml/opam-repository.git
+    - git -C /home/opam/opam-repository pull origin master
+    - opam update
+    - eval `grep "opam install" ./opam-bootstrap.sh`
+    # Compile belenios
+    - make build-debug-tool
+    - make build-release-server
+    # Start belenios web server
+    - ./demo/run-server.sh &
+    # Access the localhost web page, print page output for debug purposes, and check validity of page output
+    - first_access_index_page_output=$(wget --retry-connrefused --no-check-certificate -T 30 http://localhost:8001 -O-)
+    - echo $first_access_index_page_output
+    - if [ "$(echo \"$first_access_index_page_output\" | grep '>Belenios</a>' | wc -l)" != "1" ]; then echo "[First page access] First page access does not show a single '>Belenios</a>' text, but it should" && exit 1; else echo "[First page access] First page access shows a single '>Belenios</a>' text, as expected"; fi
+
+build_and_run_automated_test_scenarios_with_preinstalled_image:
+  stage: test
+  # Image glondu/beleniosbase-tests:YYYYMMDD-N is built by Dockerfile_test_scenario_environment
+  image: glondu/beleniosbase-tests:20211008-1
+  script:
+    # Initialize environment
+    - source ~/env.sh
+    # Compile belenios
+    - make build-debug-tool
+    - make build-release-server
+    # We don't need to start belenios web server, as it will be started by the automated test
+    # - ./demo/run-server.sh &
+    # Create a Python 3 virtual environment, where pip packages will be installed
+    - python3 -m venv venv
+    # Step into this new virtual environment
+    - source venv/bin/activate
+    # Install pip packages
+    - pip install -r requirements.txt
+    # Run the automated test scenario 1 using responsive booth
+    - BOOTH_VERSION=RESPONSIVE_BOOTH python3 ./tests/selenium/test_scenario_1.py
+    # Run the automated test scenario 4
+    - python3 ./tests/selenium/test_scenario_4.py
+    # Run the automated test scenario 3
+    - python3 ./tests/selenium/test_scenario_3.py
+    # Run the automated test scenario 2
+    - python3 ./tests/selenium/test_scenario_2.py
+    # Run the automated test scenario 1
+    - python3 ./tests/selenium/test_scenario_1.py
+
+build_and_run_automated_test_scenarios_with_preinstalled_image_and_prepared_database:
+  stage: deploy
+  rules:
+    - changes:
+        - VERSION
+  image: glondu/beleniosbase-tests:20211008-1
+  variables:
+    PREPARED_DATABASE_VERSION: v0.02.20211008
+  script:
+    # Initialize environment
+    - source ~/env.sh
+    # Import prepared database
+    - mkdir -p _run/spool
+    - wget https://gitlab.inria.fr/belenios/belenios-prepared-database/-/archive/$PREPARED_DATABASE_VERSION/belenios-prepared-database-$PREPARED_DATABASE_VERSION.tar.gz && tar -zxf belenios-prepared-database-$PREPARED_DATABASE_VERSION.tar.gz && mv belenios-prepared-database-$PREPARED_DATABASE_VERSION/* _run/spool && rm -rf belenios-prepared-database-$PREPARED_DATABASE_VERSION.tar.gz belenios-prepared-database-$PREPARED_DATABASE_VERSION
+    # Compile belenios
+    - make build-debug-tool
+    - make build-release-server
+    # We don't need to start belenios web server, as it will be started by the automated test
+    # - ./demo/run-server.sh &
+    # Create a Python 3 virtual environment, where pip packages will be installed
+    - python3 -m venv venv
+    # Step into this new virtual environment
+    - source venv/bin/activate
+    # Install pip packages
+    - pip install -r requirements.txt
+    # Run the automated test scenario 1 using responsive booth
+    - BOOTH_VERSION=RESPONSIVE_BOOTH python3 ./tests/selenium/test_scenario_1.py
+    # Run the automated test scenario 4
+    - python3 ./tests/selenium/test_scenario_4.py
+    # Run the automated test scenario 3
+    - python3 ./tests/selenium/test_scenario_3.py
+    # Run the automated test scenario 2
+    - python3 ./tests/selenium/test_scenario_2.py
+    # Run the automated test scenario 1
+    - python3 ./tests/selenium/test_scenario_1.py
+
+build_and_run_fuzz_tests_and_monkey_tests_with_preinstalled_image:
+  stage: deploy
+  rules:
+    - changes:
+        - VERSION
+  image: glondu/beleniosbase-tests:20211008-1
+  variables:
+    WAIT_TIME_BETWEEN_EACH_STEP: "0.02"
+    USE_HEADLESS_BROWSER: "1"
+    START_SERVER: "0"
+    BELENIOS_SENDMAIL: "tests/selenium/tools/sendmail_fake_to_static.sh"
+    SENT_EMAILS_TEXT_FILE_RELATIVE_PATH: "_run/usr/share/belenios-server/mail.txt"
+    FAKE_SENT_EMAILS_FILE_RELATIVE_URL: "static/mail.txt"
+    SENT_EMAILS_TEXT_FILE_ABSOLUTE_PATH: "$CI_PROJECT_DIR/$SENT_EMAILS_TEXT_FILE_RELATIVE_PATH"
+    CLEAN_UP_POLICY: "DO_NOTHING"
+  script:
+    # Initialize environment
+    - source ~/env.sh
+    # Compile belenios
+    - make build-debug-tool
+    - make build-release-server
+    # Create the file where sent emails will be stored
+    - touch $SENT_EMAILS_TEXT_FILE_RELATIVE_PATH
+    # Start belenios web server and tell it to redirect sent emails to `mail.txt` (because of environment variable `BELENIOS_SENDMAIL`)
+    - ./demo/run-server.sh &
+    # Create a Python 3 virtual environment, where pip packages will be installed
+    - python3 -m venv venv
+    # Step into this new virtual environment
+    - source venv/bin/activate
+    # Install pip packages
+    - pip install -r requirements.txt
+    # Execute fuzz testing of the main login form
+    - LOGIN_MODE=local python ./tests/selenium/test_fuzz_login.py
+    # # Execute fuzz testing of the "Advanced mode" voting process
+    # - python ./tests/selenium/test_fuzz_vote.py
+    # Execute clicker monkey testing
+    - python ./tests/selenium/test_clicker_monkey.py
+    # # Execute smart monkey testing
+    # - python ./tests/selenium/test_smart_monkey.py
+    # # Execute test scenario 2 with a mix of normal voters and smart monkeys
+    # - NUMBER_OF_INVITED_VOTERS=10 NUMBER_OF_VOTING_VOTERS=5 NUMBER_OF_MONKEY_VOTING_VOTERS=3 NUMBER_OF_VOTING_VOTERS_IN_FIRST_PART=1 NUMBER_OF_REVOTING_VOTERS=1 python ./tests/selenium/test_scenario_2_with_monkeys.py

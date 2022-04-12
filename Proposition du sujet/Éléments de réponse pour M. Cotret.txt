@@ -1,0 +1,4 @@
+1. Pour ce qui est de l'héritage entre classes, j'avais pensé faire une classe mère "Scrutin" et créer une classe fille par mode de scrutin. 
+Cela serait-il suffisant pour un héritage ?
+
+2.
