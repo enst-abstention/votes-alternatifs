@@ -1,0 +1,6 @@
+[submodule "outsidersImplementation/majorityVote"]
+	path = outsidersImplementation/majorityVote
+	url = https://github.com/Satoshishi00/majorityVote
+[submodule "outsidersImplementation/condorcet"]
+	path = outsidersImplementation/condorcet
+	url = https://github.com/radii/condorcet
