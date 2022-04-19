@@ -1,4 +1,0 @@
-(library
- (name belenios_server_module)
- (public_name belenios-server.module)
- (libraries belenios-server))

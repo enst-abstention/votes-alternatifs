@@ -1,3 +1,0 @@
-(executable
- (name mo2json)
- (libraries gettext-camomile yojson))

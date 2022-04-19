@@ -1,3 +1,0 @@
-(executable
- (name convert)
- (libraries belenios-platform-native belenios pcre))
