@@ -76,10 +76,7 @@ class JugementMajoritaire(Scrutin):
     def rangement_candidat(self):
         return
 
-    def mediane(self):
-        return
-
-    def aff_resultat(self):
+    def afficher_resultat(self):
         return
 
     def results_hash(self, bulletins):
