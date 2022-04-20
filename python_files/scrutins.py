@@ -1,7 +1,6 @@
 class Scrutin:
-    def __init__(self, candidats, bulletins):
-        self.candidats = []
-        self.__limmed = len(bulletins)/2
+    def __init__(self, candidats):
+        self.candidats = candidats
 
     def bulletin_valide(self):
         return
@@ -13,8 +12,8 @@ class Scrutin:
 
 class Condorcet(Scrutin):
 
-    def __init__(self, candidats, bulletins):
-        Scrutin.__init__(self, candidats,bulletins)
+    def __init__(self, candidats):
+        Scrutin.__init__(self, candidats)
 
     def vainqueur_condorcet(self, estprefere):
         """Determine the winner of an election using the Schulze method (sometimes
@@ -71,8 +70,8 @@ class Condorcet(Scrutin):
 
 class JugementMajoritaire(Scrutin):
 
-    def __init__(self, candidats, bulletins):
-        Scrutin.__init__(self, candidats,bulletins)
+    def __init__(self, candidats):
+        Scrutin.__init__(self, candidats)
 
     def rangement_candidat(self):
         return

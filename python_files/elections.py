@@ -92,7 +92,7 @@ class Election:
 class Bulletin:
     def __init__(self, election):
         self.__election = election
-        self.__id = len(election.geturne())
+        self.__id = 1
         self.__valide = False
         self.__date = datetime.date
         self.__vote = {}
