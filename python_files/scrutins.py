@@ -65,7 +65,7 @@ class Condorcet(Scrutin):
                         estprefere[i, j] += 1
         return estprefere
 
-    def afficher_resultats(self):
+    def aff_resultats(self):
         return
 
 
@@ -80,7 +80,7 @@ class JugementMajoritaire(Scrutin):
     def mediane(self):
         return
 
-    def afficher_resultat(self):
+    def aff_resultat(self):
         return
 
     def results_hash(self, bulletins):
