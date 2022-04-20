@@ -2,9 +2,6 @@ class Scrutin:
     def __init__(self, candidats):
         self.candidats = candidats
 
-    def bulletin_valide(self):
-        return
-
     # def classement(self):
     def statistique(self):
         return
@@ -14,16 +11,21 @@ class Condorcet(Scrutin):
 
     def __init__(self, candidats):
         Scrutin.__init__(self, candidats)
+        self.__votesAutorises = [i for i in range(len(candidats)+1)]
 
-    def vainqueur_condorcet(self, estprefere):
+    @property
+    def votesAutorises(self):
+        return self.__votesAutorises
+
+    def resultat(self, estprefere):
         """Determine the winner of an election using the Schulze method (sometimes
-        called CSSD).  'candidates' should be a list of candidates and 'prefer'
+        called CSSD). 'candidates' should be a list of candidates and 'prefer'
         should be a dictionary that maps the pair (i, j) to the number of voters
         who prefer candidate i to candidate j."""
 
         # Compute the margin of victory for each candidate i over candidate j.
         margin = {}
-        n = len(self)
+        n = len(self.candidats)
         for i in range(n):
             for j in range(n):
                 margin[i, j] = estprefere[i, j] - estprefere[j, i]
@@ -64,7 +66,7 @@ class Condorcet(Scrutin):
                         estprefere[i, j] += 1
         return estprefere
 
-    def aff_resultats(self):
+    def aff_stats(self):
         return
 
 
@@ -72,12 +74,8 @@ class JugementMajoritaire(Scrutin):
 
     def __init__(self, candidats):
         Scrutin.__init__(self, candidats)
-
-    def rangement_candidat(self):
-        return
-
-    def afficher_resultat(self):
-        return
+        self.__limmed = 5
+        self.__votesAutorises = ["A rejeter","Insuffisant", "Passable", "Assez bien", "Bien", "Très bien", "Excellent"]
 
     def results_hash(self, bulletins):
         """ Count votes per candidate and per mention
@@ -105,3 +103,10 @@ class JugementMajoritaire(Scrutin):
                     }
                     break
         return result
+
+    def resultat(self, urne):
+        vainqueur = "Arthaud"
+        return vainqueur
+
+    def aff_stats(self):
+        return
