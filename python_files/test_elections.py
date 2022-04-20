@@ -1,4 +1,4 @@
-import elections as elec
+
 import unittest
 
 
