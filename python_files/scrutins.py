@@ -1,10 +1,10 @@
-class Scrutin:
-    def __init__(self, candidats):
-        self.candidats = candidats
 
-    # def classement(self):
-    def statistique(self):
-        return
+
+class Scrutin:
+
+    def __init__(self,candidats):
+        self.candidats = []
+
 
 class Condorcet(Scrutin):
 
@@ -15,6 +15,7 @@ class Condorcet(Scrutin):
     @property
     def votesautorises(self):
         return self.__votesautorises
+
 
     def confrontation2(self, bulletins):
         """
@@ -45,7 +46,7 @@ class Condorcet(Scrutin):
          i ou j prefere par les electeurs".
         """
 
-        # Confronte les candidats deux par deux et affectent a chaque candidat ses victoires
+        # Confronte les candidats deux par deux et affectent à chaque candidat ses victoires
         marge = {}
         n = len(self.candidats)
         for i in range(n):
@@ -61,7 +62,7 @@ class Condorcet(Scrutin):
                         if marge[j, k] < smallest:
                             marge[j, k] = smallest
 
-        # Le candidat qui reste invainqu est le gagnant
+        # Le candidat qui reste invaincu est le gagnant
         vainqueurs = []
         for i in range(n):
             for j in range(n):
@@ -71,25 +72,7 @@ class Condorcet(Scrutin):
                 vainqueurs.append(i)
         return vainqueurs
 
-    def confrontation2(self, bulletins):
-        """Collect a list of ballots into a preference matrix.  'ballots' should
-        be a list of ballots, where each ballot is a list of rankings.  For
-        example, if there are 3 candidates, each ballot should be a list of 3
-        numbers corresponding to the candidates.  Smaller rankings are better."""
-        estprefere = {}
-        n = len(self)
-        for i in range(n):
-            for j in range(n):
-                estprefere[i, j] = 0
-        for bulletin in bulletins:
-            for i in range(n):
-                for j in range(n):
-                    if bulletin[i] < bulletin[j]:
-                        estprefere[i, j] += 1
-        return estprefere
 
-    def aff_stats(self):
-        return
 
 class JugementMajoritaire(Scrutin):
 
@@ -118,16 +101,15 @@ class JugementMajoritaire(Scrutin):
                 resultats_par_candidat[candidat][mention] += 1
         return resultats_par_candidat
 
-
-
+      
     def mention_majoritaire(self,resultats_par_candidat):
-
         resultat = {}
         for candidat, resultat1candidat in resultats_par_candidat.items():
             votes_cumules = 0
             for note, compte_vote in enumerate(resultat1candidat):
                 votes_cumules += compte_vote
-                if self.limite < votes_cumules:
+                limite = len(resultats_par_candidat)/2
+                if  limite < votes_cumules:
                     resultat[candidat] = {
                         "mention": note,
                         "score": votes_cumules
@@ -135,10 +117,3 @@ class JugementMajoritaire(Scrutin):
                     break
 
         return resultat
-
-    def resultat(self, urne):
-        vainqueur = "Arthaud"
-        return vainqueur
-
-    def aff_stats(self):
-        return
