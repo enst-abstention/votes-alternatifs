@@ -10,6 +10,11 @@ class Condorcet(Scrutin):
 
     def __init__(self, candidats):
         Scrutin.__init__(self, candidats)
+        self.__votesautorises = [i for i in range(len(candidats)+1)]
+
+    @property
+    def votesautorises(self):
+        return self.__votesautorises
 
 
     def confrontation2(self, bulletins):
@@ -57,7 +62,7 @@ class Condorcet(Scrutin):
                         if marge[j, k] < smallest:
                             marge[j, k] = smallest
 
-        # Le candidat qui reste invainqu est le gagnant
+        # Le candidat qui reste invaincu est le gagnant
         vainqueurs = []
         for i in range(n):
             for j in range(n):
@@ -73,7 +78,12 @@ class JugementMajoritaire(Scrutin):
 
     def __init__(self, candidats):
         Scrutin.__init__(self, candidats)
+        self.limite = 2
+        self.__votesautorises = ["A rejeter", "Insuffisant", "Passable", "Assez Bien", "Bien", "Très Bien", "Excellent"]
 
+    @property
+    def votesautorises(self):
+        return self.__votesautorises
 
     def resultats_candidat(self, bulletins):
         """
@@ -91,8 +101,7 @@ class JugementMajoritaire(Scrutin):
                 resultats_par_candidat[candidat][mention] += 1
         return resultats_par_candidat
 
-
-
+      
     def mention_majoritaire(self,resultats_par_candidat):
         resultat = {}
         for candidat, resultat1candidat in resultats_par_candidat.items():
@@ -108,5 +117,3 @@ class JugementMajoritaire(Scrutin):
                     break
 
         return resultat
-
-
