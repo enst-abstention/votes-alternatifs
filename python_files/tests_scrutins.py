@@ -4,6 +4,7 @@ import unittest
 class TestScrutin(unittest.TestCase):
 
     def setUp(self):
+        self.bull =
         self.s = Scrutin(['Melenchon', 'Macron', 'Le_Pen','Zemour','Pecresse'],[{'Melencon': 1, 'Macron': 2, 'Pecresse': 3,'Le_Pen':4,'Zemour':5}, {'Melencon': 2, 'Macron': 1, 'Pecresse': 4,'Le_Pen':3,'Zemour':5}])
 
     def test_egalite_liste_candidat(self):
