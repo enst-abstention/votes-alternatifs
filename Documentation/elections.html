@@ -1,0 +1,176 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module elections</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>elections</strong></big></big></font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href="../python_files">index</a><br><a href="file:c%3A%5Cusers%5Clemaitre%20j%C3%A9r%C3%A9my%5Cdesktop%5Cvotes-alternatifs%5Cpython_files%5Celections.py">c:\users\lemaitre jérémy\desktop\votes-alternatifs\python_files\elections.py</a></font></td></tr></table>
+    <p></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#aa55cc">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Modules</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#aa55cc"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><table width="100%" summary="list"><tr><td width="25%" valign=top><a href="datetime.html">datetime</a><br>
+</td><td width="25%" valign=top><a href="consolemenu.items.html">consolemenu.items</a><br>
+</td><td width="25%" valign=top><a href="matplotlib.html">matplotlib</a><br>
+</td><td width="25%" valign=top><a href="scrutins.html">scrutins</a><br>
+</td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ee77aa">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Classes</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#ee77aa"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl>
+<dt><font face="helvetica, arial"><a href="builtins.html#object">builtins.object</a>
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="elections.html#Bulletin">Bulletin</a>
+</font></dt><dt><font face="helvetica, arial"><a href="elections.html#Election">Election</a>
+</font></dt></dl>
+</dd>
+</dl>
+ <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="Bulletin">class <strong>Bulletin</strong></a>(<a href="builtins.html#object">builtins.object</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt><a href="#Bulletin">Bulletin</a>(election,&nbsp;electeur,&nbsp;t=datetime.datetime(2022,&nbsp;4,&nbsp;22,&nbsp;1,&nbsp;0,&nbsp;32,&nbsp;121752))<br>
+&nbsp;<br>
+Auteur&nbsp;:&nbsp;Jérémy&nbsp;LEMAITRE<br>
+Description&nbsp;:&nbsp;Représente&nbsp;le&nbsp;bulletin&nbsp;qu'un&nbsp;électeur&nbsp;rempli&nbsp;et&nbsp;dépose&nbsp;dans&nbsp;l'urne.<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%">Methods defined here:<br>
+<dl><dt><a name="Bulletin-__init__"><strong>__init__</strong></a>(self, election, electeur, t=datetime.datetime(2022, 4, 22, 1, 0, 32, 121752))</dt><dd><tt>Initialize&nbsp;self.&nbsp;&nbsp;See&nbsp;help(type(self))&nbsp;for&nbsp;accurate&nbsp;signature.</tt></dd></dl>
+
+<dl><dt><a name="Bulletin-complete"><strong>complete</strong></a>(self)</dt><dd><tt>Itère&nbsp;le&nbsp;remplissage&nbsp;des&nbsp;lignes&nbsp;et&nbsp;demande&nbsp;à&nbsp;l'électeur&nbsp;s'il&nbsp;a&nbsp;fini&nbsp;de&nbsp;remplir&nbsp;son&nbsp;bulletin.<br>
+Sort&nbsp;de&nbsp;la&nbsp;fonction&nbsp;lorsque&nbsp;le&nbsp;bulletin&nbsp;est&nbsp;rempli</tt></dd></dl>
+
+<dl><dt><a name="Bulletin-estvalide"><strong>estvalide</strong></a>(self)</dt><dd><tt>Vérifie&nbsp;que&nbsp;le&nbsp;bulletin&nbsp;remplit&nbsp;bien&nbsp;les&nbsp;conditions&nbsp;de&nbsp;validité&nbsp;de&nbsp;l'élection&nbsp;en&nbsp;procédant&nbsp;à&nbsp;plusieurs&nbsp;tests.<br>
+&nbsp;<br>
+Returns<br>
+_________<br>
+bool&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;True&nbsp;si&nbsp;les&nbsp;conditions&nbsp;sont&nbsp;vérifiées</tt></dd></dl>
+
+<dl><dt><a name="Bulletin-ligne"><strong>ligne</strong></a>(self)</dt><dd><tt>Demande&nbsp;à&nbsp;l'électeur&nbsp;de&nbsp;remplir&nbsp;une&nbsp;unique&nbsp;ligne&nbsp;du&nbsp;bulletin&nbsp;et&nbsp;propose&nbsp;les&nbsp;candidats&nbsp;et&nbsp;options&nbsp;de&nbsp;vote<br>
+&nbsp;<br>
+Returns<br>
+____________<br>
+candidat&nbsp;:&nbsp;str<br>
+&nbsp;&nbsp;&nbsp;&nbsp;nom&nbsp;du&nbsp;candidat&nbsp;à&nbsp;placer&nbsp;dans&nbsp;le&nbsp;bulletin<br>
+&nbsp;<br>
+choix&nbsp;:&nbsp;str<br>
+&nbsp;&nbsp;&nbsp;&nbsp;classement,&nbsp;mention&nbsp;ou&nbsp;note&nbsp;attribué&nbsp;au&nbsp;candidat&nbsp;précédemment&nbsp;choisi</tt></dd></dl>
+
+<dl><dt><a name="Bulletin-print_candidats"><strong>print_candidats</strong></a>(self)</dt><dd><tt>Permet&nbsp;l'affichage&nbsp;des&nbsp;candidats&nbsp;que&nbsp;les&nbsp;électeurs&nbsp;peuvent&nbsp;renseigner&nbsp;sur&nbsp;leur&nbsp;bulletin.</tt></dd></dl>
+
+<dl><dt><a name="Bulletin-print_options"><strong>print_options</strong></a>(self)</dt><dd><tt>Permet&nbsp;l'affichage&nbsp;des&nbsp;différents&nbsp;choix&nbsp;de&nbsp;vote&nbsp;qui&nbsp;s'offrent&nbsp;aux&nbsp;candidats.</tt></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>bulletin</strong></dt>
+</dl>
+<dl><dt><strong>date</strong></dt>
+</dl>
+<dl><dt><strong>election</strong></dt>
+</dl>
+<dl><dt><strong>id</strong></dt>
+</dl>
+<dl><dt><strong>valide</strong></dt>
+</dl>
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>tps</strong> = datetime.datetime(2022, 4, 22, 1, 0, 32, 121752)</dl>
+
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="Election">class <strong>Election</strong></a>(<a href="builtins.html#object">builtins.object</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt><a href="#Election">Election</a>(nom,&nbsp;dates,&nbsp;candidats,&nbsp;electeurs,&nbsp;mode)<br>
+&nbsp;<br>
+Auteur&nbsp;:&nbsp;Jérémy&nbsp;LEMAITRE<br>
+Description&nbsp;:&nbsp;La&nbsp;classe&nbsp;<a href="#Election">Election</a>&nbsp;permet&nbsp;de&nbsp;définir&nbsp;une&nbsp;unique&nbsp;élection&nbsp;avec&nbsp;les<br>
+paramètres&nbsp;et&nbsp;variables&nbsp;qui&nbsp;lui&nbsp;sont&nbsp;propre.<br>
+&nbsp;<br>
+Attributes<br>
+______________<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%">Methods defined here:<br>
+<dl><dt><a name="Election-__init__"><strong>__init__</strong></a>(self, nom, dates, candidats, electeurs, mode)</dt><dd><tt>Initialize&nbsp;self.&nbsp;&nbsp;See&nbsp;help(type(self))&nbsp;for&nbsp;accurate&nbsp;signature.</tt></dd></dl>
+
+<dl><dt><a name="Election-aff_resultats"><strong>aff_resultats</strong></a>(self)</dt><dd><tt>Méthode&nbsp;qui&nbsp;permet&nbsp;l'affichage&nbsp;des&nbsp;résulats&nbsp;de&nbsp;l'élection&nbsp;dans&nbsp;la&nbsp;console&nbsp;Python.</tt></dd></dl>
+
+<dl><dt><a name="Election-depouillement"><strong>depouillement</strong></a>(self)</dt><dd><tt>Une&nbsp;fois&nbsp;que&nbsp;le&nbsp;vote&nbsp;est&nbsp;cloturé,&nbsp;cette&nbsp;fonction&nbsp;appelle&nbsp;la&nbsp;méthode&nbsp;resultat&nbsp;du&nbsp;mode&nbsp;de&nbsp;scrutin&nbsp;choisi.&nbsp;Par<br>
+polymorphisme&nbsp;la&nbsp;méthode&nbsp;traite&nbsp;les&nbsp;bulletins&nbsp;en&nbsp;accord&nbsp;avec&nbsp;le&nbsp;mode&nbsp;de&nbsp;scrutin&nbsp;choisi.<br>
+&nbsp;<br>
+Returns<br>
+______________<br>
+vainqueur&nbsp;:&nbsp;str<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Le&nbsp;gagnant&nbsp;de&nbsp;l'élection</tt></dd></dl>
+
+<dl><dt><a name="Election-remplissage_urne"><strong>remplissage_urne</strong></a>(self, bulletin)</dt><dd><tt>Permet&nbsp;simplement&nbsp;de&nbsp;placer&nbsp;un&nbsp;bulletin&nbsp;dans&nbsp;l'urne&nbsp;si&nbsp;celui-ci&nbsp;est&nbsp;valide.&nbsp;(Peut-être&nbsp;inutile)<br>
+&nbsp;<br>
+Parameters&nbsp;:<br>
+______________<br>
+bulletin&nbsp;:&nbsp;dict<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Le&nbsp;bulletin&nbsp;d'un&nbsp;électeur</tt></dd></dl>
+
+<dl><dt><a name="Election-verif_elec"><strong>verif_elec</strong></a>(self, electeur)</dt><dd><tt>Vérifie&nbsp;que&nbsp;si&nbsp;un&nbsp;électeur&nbsp;entré&nbsp;en&nbsp;paramètre&nbsp;est&nbsp;bien&nbsp;présent&nbsp;dans&nbsp;la&nbsp;liste&nbsp;électorale<br>
+&nbsp;<br>
+Parameters<br>
+____________<br>
+electeur&nbsp;:&nbsp;str<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Identifiant&nbsp;de&nbsp;l'électeur&nbsp;considéré<br>
+&nbsp;<br>
+Returns<br>
+___________<br>
+bool<br>
+&nbsp;&nbsp;&nbsp;&nbsp;True&nbsp;si&nbsp;l'électeur&nbsp;a&nbsp;le&nbsp;droit&nbsp;de&nbsp;voter,&nbsp;False&nbsp;sinon</tt></dd></dl>
+
+<dl><dt><a name="Election-vote_en_cours"><strong>vote_en_cours</strong></a>(self)</dt><dd><tt>Permet&nbsp;de&nbsp;lancer&nbsp;l'élection&nbsp;et&nbsp;de&nbsp;la&nbsp;maintenir&nbsp;jusqu'à&nbsp;la&nbsp;date&nbsp;de&nbsp;cloture.&nbsp;Lorsqu'un&nbsp;nouvel&nbsp;électeur&nbsp;se<br>
+présente,&nbsp;il&nbsp;entre&nbsp;son&nbsp;numéro&nbsp;d'électeur&nbsp;et&nbsp;peut&nbsp;alors&nbsp;accéder&nbsp;au&nbsp;remplissage&nbsp;de&nbsp;son&nbsp;bulletin.<br>
+Le&nbsp;bulletin</tt></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>candidats</strong></dt>
+</dl>
+<dl><dt><strong>debut</strong></dt>
+</dl>
+<dl><dt><strong>fin</strong></dt>
+</dl>
+<dl><dt><strong>nbBulletins</strong></dt>
+</dl>
+<dl><dt><strong>nom</strong></dt>
+</dl>
+<dl><dt><strong>scrutin</strong></dt>
+</dl>
+<dl><dt><strong>urne</strong></dt>
+</dl>
+</td></tr></table></td></tr></table>
+</body></html>
