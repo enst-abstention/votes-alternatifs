@@ -1,13 +1,11 @@
 class Scrutin:
-    def __init__(self,candidats,bulletins):
+    def __init__(self,candidats):
         self.candidats = []
-        self.limite = len(bulletins)/2
-        self.bulletins = bulletins
 
 class Condorcet(Scrutin):
 
-    def __init__(self, candidats, bulletins):
-        Scrutin.__init__(self, candidats,bulletins)
+    def __init__(self, candidats):
+        Scrutin.__init__(self, candidats)
 
     def confrontation2(self, bulletins):
         """
@@ -66,8 +64,8 @@ class Condorcet(Scrutin):
 
 class JugementMajoritaire(Scrutin):
 
-    def __init__(self, candidats, bulletins):
-        Scrutin.__init__(self, candidats,bulletins)
+    def __init__(self, candidats):
+        Scrutin.__init__(self, candidats)
 
     def resultats_candidat(self, bulletins):
         """
@@ -93,7 +91,8 @@ class JugementMajoritaire(Scrutin):
             votes_cumules = 0
             for note, compte_vote in enumerate(resultat1candidat):
                 votes_cumules += compte_vote
-                if self.limite < votes_cumules:
+                limite = len(resultats_par_candidat)/2
+                if  limite< votes_cumules:
                     resultat[candidat] = {
                         "mention": note,
                         "score": votes_cumules
