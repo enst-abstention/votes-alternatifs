@@ -1,7 +1,8 @@
 class Scrutin:
-    def __init__(self,candidats, bulletins):
+    def __init__(self,candidats,bulletins):
         self.candidats = []
         self.limite = len(bulletins)/2
+        self.bulletins = bulletins
 
 class Condorcet(Scrutin):
 
@@ -33,7 +34,7 @@ class Condorcet(Scrutin):
     def vainqueur_condorcet(self, est_prefere):
         """ Determine le gagnant d'une election en utilisant la methode Schulze ( aussi appellé CSSD).
         'candidats' est de type liste et 'estprefere' un dictionnaire qui a pour cle la liste de candidat [i,j]
-        et pour valeur une liste de taille 2 ou chaque element de la liste represente le nombre de voix du candidat
+        et pour valeur un entier qui represente le nombre de voix du candidat
          i ou j prefere par les electeurs".
         """
 
