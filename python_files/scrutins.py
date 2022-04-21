@@ -1,11 +1,16 @@
+
+
 class Scrutin:
+
     def __init__(self,candidats):
         self.candidats = []
+
 
 class Condorcet(Scrutin):
 
     def __init__(self, candidats):
         Scrutin.__init__(self, candidats)
+
 
     def confrontation2(self, bulletins):
         """
@@ -36,7 +41,7 @@ class Condorcet(Scrutin):
          i ou j prefere par les electeurs".
         """
 
-        # Confronte les candidats deux par deux et affectent a chaque candidat ses victoires
+        # Confronte les candidats deux par deux et affectent à chaque candidat ses victoires
         marge = {}
         n = len(self.candidats)
         for i in range(n):
@@ -62,10 +67,13 @@ class Condorcet(Scrutin):
                 vainqueurs.append(i)
         return vainqueurs
 
+
+
 class JugementMajoritaire(Scrutin):
 
     def __init__(self, candidats):
         Scrutin.__init__(self, candidats)
+
 
     def resultats_candidat(self, bulletins):
         """
@@ -92,10 +100,13 @@ class JugementMajoritaire(Scrutin):
             for note, compte_vote in enumerate(resultat1candidat):
                 votes_cumules += compte_vote
                 limite = len(resultats_par_candidat)/2
-                if  limite< votes_cumules:
+                if  limite < votes_cumules:
                     resultat[candidat] = {
                         "mention": note,
                         "score": votes_cumules
                     }
                     break
+
         return resultat
+
+
