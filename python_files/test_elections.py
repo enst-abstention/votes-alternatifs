@@ -1,6 +1,9 @@
+import sqlite3
+
 from elections import *
 from scrutins import *
 import unittest
+from unittest.mock import patch
 import datetime
 
 
@@ -113,6 +116,36 @@ class TestBulletin(unittest.TestCase):
         self.assertTrue(self.b1.rempli)
     #########################################################################
 
+class TestListeElectorale(unittest.TestCase):
+    """
+        Auteur : Jérémy LEMAITRE
+        Description : Cette classe teste le bon fonctionnement des méthodes permettant de communiquer avec la
+        base de données électeurs.
+    """
+    entrees = "Sheick Simpore sheick.simpore@ensta-bretagne.org"
+
+    @patch('builtins.input', return_value = entrees)
+
+    def setUp(self):
+        """
+        Définition des instances utiles pour l'ensemble de la classe de test.
+        """
+
+        self.listeElecteurs = ListeElectorale("Présidentielles2022")
+
+    def testInit(self):
+        """
+            Teste la bonne initialisation de la base de données Electeurs.
+            Vérifie seulement que les variables d'instance sont bien du type de souhaité.
+        """
+        self.assertIsInstance(self.listeElecteurs.name, str)
+        self.assertIsInstance(self.listeElecteurs.bdd, sqlite3.Connection)
+        self.assertIsInstance(self.listeElecteurs.cursor, sqlite3.Cursor)
+
+    def testInsertion(self, mock_input):
+        self.listeElecteurs.ajout_electeur()
+        nomelec = self.listeElecteurs.cursor.execute("""SELECT nom FROM Electeurs;""")
+        self.assertEqual(nomelec,"Simpore")
 
 if __name__ == '__main__':
     unittest.main()
