@@ -1,14 +1,65 @@
 import datetime
+import os.path
+
 import matplotlib as plt
 import scrutins as scr
 from consolemenu import *
 from consolemenu.items import *
+import sqlite3 as sql
+from random import choices
+from string import *
 
 """module elections :
 
 Ce module permet la création d'une élection avec tous les outils dont elle a besoin.
 Il est composé de plusieurs classes : Election, Bulletin, ...
 """
+
+
+def generation_mdp(length):
+    mdp = ""
+    return mdp.join(choices(ascii_letters + digits + punctuation, k=length))
+
+
+class ListeElectorale():
+    def __init__(self, name):
+        self.__name = name
+        self.__bdd = sql.connect(os.path.join("..","bdd","{}.db".format(self.__name)), uri=True)
+        self.__cursor = self.__bdd.cursor()
+        self.cursor.execute("""create table Electeurs(
+            id integer primary key autoincrement  unique , 
+            prenom varchar(30), nom varchar(30) NOT NULL, 
+            mdp varchar(20) NOT NULL, 
+            contact varchar(80) NOT NULL , 
+            autorisation integer NOT NULL , 
+            etat integer NOT NULL);""")
+        self.__bdd.commit()
+
+    @property
+    def name(self):
+        return self.__name
+
+    @property
+    def bdd(self):
+        return self.__bdd
+
+    @property
+    def cursor(self):
+        return self.__cursor
+
+    def ajout_electeur(self):
+        """
+        Auteur : Jérémy LEMAITRE
+        """
+        print("Renseignez un nouvel électeur :")
+        prenom = input("\n \t Prénom :")
+        nom = input("\n \t Nom :")
+        mdp = generation_mdp(18)
+        contact = input("\n \t Email :")
+        data = {"prenom": prenom, "nom": nom, "mdp": mdp, "contact": contact, "autorisation": 1, "etat": 0}
+        self.cursor.execute("""INSERT INTO Electeurs(prenom, nom, mdp, contact, autorisation, etat) 
+            VALUES(:prenom, :nom, :mdp, :contact, :autorisation, :etat)""", data)
+        self.__bdd.commit()
 
 
 class Election:
@@ -89,7 +140,6 @@ class Election:
         else:
             return False
 
-
     def remplissage_urne(self, bulletin):
         """
         Permet simplement de placer un bulletin dans l'urne si celui-ci est valide. (Peut-être inutile)
@@ -101,7 +151,7 @@ class Election:
         """
         if bulletin.estvalide():
             self.__urne.append(bulletin)
-        else :
+        else:
             print("Vote non pris en compte. Le bulletin n'est pas valide.")
 
     def vote_en_cours(self):
@@ -144,7 +194,7 @@ class Bulletin:
     """
     tps = datetime.datetime.now()
 
-    def __init__(self, election, electeur, t = tps):
+    def __init__(self, election, electeur, t=tps):
         self.__election = election
         self.__id = 1000 + election.nbBulletins
         self.__electeur = electeur
@@ -244,15 +294,17 @@ class Bulletin:
 
 
 if __name__ == '__main__':
-    ouverture = datetime.datetime(2022, 4, 10)
-    cloture = datetime.datetime(2022, 4, 25)
-    presid = Election("Élections présidentielles", (ouverture, cloture),
-                      ["Macron", "Le Pen", "Mélenchon", "Zemmour", "Péceresse", "Jadot", "Lassalle", "Roussel",
-                       "Dupont-Aignan", "Hidalgo", "Poutou", "Arthaud"], [i for i in range(100)], "condorcet")
-    presid2 = Election("Élections présidentielles", (cloture, ouverture),
-                       ["Macron", "Le Pen", "Mélenchon", "Zemmour", "Péceresse", "Jadot", "Lassalle", "Roussel",
-                        "Dupont-Aignan", "Hidalgo", "Poutou", "Arthaud"], [i for i in range(100)],
-                       "jugement majoritaire")
-    v = Bulletin(presid2,1)
-    v.complete()
-    print(v.bulletin)
+    # ouverture = datetime.datetime(2022, 4, 10)
+    # cloture = datetime.datetime(2022, 4, 25)
+    # presid = Election("Élections présidentielles", (ouverture, cloture),
+    #                   ["Macron", "Le Pen", "Mélenchon", "Zemmour", "Péceresse", "Jadot", "Lassalle", "Roussel",
+    #                    "Dupont-Aignan", "Hidalgo", "Poutou", "Arthaud"], [i for i in range(100)], "condorcet")
+    # presid2 = Election("Élections présidentielles", (cloture, ouverture),
+    #                    ["Macron", "Le Pen", "Mélenchon", "Zemmour", "Péceresse", "Jadot", "Lassalle", "Roussel",
+    #                     "Dupont-Aignan", "Hidalgo", "Poutou", "Arthaud"], [i for i in range(100)],
+    #                    "jugement majoritaire")
+    # v = Bulletin(presid2, 1)
+    # v.complete()
+    # print(v.bulletin)
+
+    liste_electorale = ListeElectorale("Presi")
