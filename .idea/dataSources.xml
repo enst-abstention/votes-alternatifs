@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="electeurs.sqlite" uuid="aab21313-bb4e-4d0e-b4ba-c40c483ade7d">
+    <data-source source="LOCAL" name="base de donnee identifiants" uuid="56ac2a6a-27cd-426a-975b-4da939c86fcd">
       <driver-ref>sqlite.xerial</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
-      <jdbc-url>jdbc:sqlite:$PROJECT_DIR$/bdd/electeurs.sqlite</jdbc-url>
+      <jdbc-url>jdbc:sqlite:C:\Users\rtt\OneDrive\Bureau\votes-alternatifs\IHM\base de donnee identifiants.db</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
   </component>
