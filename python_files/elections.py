@@ -48,6 +48,9 @@ class ListeElectorale():
         return self.__cursor
 
     def ajout_electeur(self):
+        """
+        Auteur : Jérémy LEMAITRE
+        """
         print("Renseignez un nouvel électeur :")
         prenom = input("\n \t Prénom :")
         nom = input("\n \t Nom :")
