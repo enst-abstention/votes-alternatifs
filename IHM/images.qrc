@@ -1,0 +1,8 @@
+<RCC>
+  <qresource prefix="image acceuil">
+    <file>new_image.png</file>
+  </qresource>
+  <qresource prefix="vraiimg">
+    <file>vraiimg.png</file>
+  </qresource>
+</RCC>
