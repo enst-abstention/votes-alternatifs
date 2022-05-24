@@ -27,11 +27,11 @@ class ListeElectorale():
         self.__bdd = sql.connect(os.path.join("..","bdd","{}.db".format(self.__name)), uri=True)
         self.__cursor = self.__bdd.cursor()
         self.cursor.execute("""create table Electeurs(
-            id integer primary key autoincrement  unique , 
+            id integer primary key autoincrement unique, 
             prenom varchar(30), nom varchar(30) NOT NULL, 
             mdp varchar(20) NOT NULL, 
-            contact varchar(80) NOT NULL , 
-            autorisation integer NOT NULL , 
+            contact varchar(80) NOT NULL, 
+            autorisation integer NOT NULL, 
             etat integer NOT NULL);""")
         self.__bdd.commit()
 
@@ -57,8 +57,8 @@ class ListeElectorale():
         mdp = generation_mdp(18)
         contact = input("\n \t Email :")
         data = {"prenom": prenom, "nom": nom, "mdp": mdp, "contact": contact, "autorisation": 1, "etat": 0}
-        self.cursor.execute("""INSERT INTO Electeurs(prenom, nom, mdp, contact, autorisation, etat) 
-            VALUES(:prenom, :nom, :mdp, :contact, :autorisation, :etat)""", data)
+        self.cursor.execute("""INSERT INTO Electeurs(prenom, nom, mdp, contact, autorisation, etat) VALUES(:prenom, 
+        :nom, :mdp, :contact, :autorisation, :etat)""", data)
         self.__bdd.commit()
 
 
@@ -285,8 +285,7 @@ class Bulletin:
         testdate = self.election.debut < self.__date < self.election.fin
         testelecteur = self.election.verif_elec(self.__electeur)
         testcandidats = all([(key in self.election.candidats) for key in self.__bulletin.keys()])
-        testvote = all([(item in self.election.scrutin.votesautorises) for item in self.__bulletin.items()])
-
+        testvote = all([(item in self.election.scrutin.votesautorises) for item in self.__bulletin.values()])
         if all([testdate, testelecteur, testcandidats, testvote]):
             self.__valide = True
 

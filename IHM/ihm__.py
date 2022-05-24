@@ -1,6 +1,8 @@
 from PyQt5.uic import loadUi
 from PyQt5 import QtWidgets
 from PyQt5.QtWidgets import QDialog, QApplication,QStackedWidget,QWidget
+from python_files import elections as ele
+from python_files import scrutins as scr
 import sys
 import sqlite3
 from PyQt5.QtGui import QPixmap

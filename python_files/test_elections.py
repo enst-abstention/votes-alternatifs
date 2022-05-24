@@ -17,7 +17,7 @@ class TestElection(unittest.TestCase):
         Définition des instances utiles pour l'ensemble de la classe de test.
         """
         ouverture = datetime.datetime(2022, 4, 10)
-        cloture = datetime.datetime(2022, 4, 25)
+        cloture = datetime.datetime(2022, 6, 25)
         self.presid = Election("Élections présidentielles", (ouverture, cloture),
                                ["Macron", "Le Pen", "Mélenchon", "Zemmour", "Péceresse", "Jadot", "Lassalle", "Roussel",
                                 "Dupont-Aignan", "Hidalgo", "Poutou", "Arthaud"], [i for i in range(100)], "condorcet")
@@ -53,26 +53,28 @@ class TestElection(unittest.TestCase):
         self.assertTrue(valide)
         self.assertFalse(invalide)
 
-    ########################################################################
-    #Ne fonctionne pas comment renseigner les inputs dans les tests unittest
-    def testRemplissage(self):
-        vote = Bulletin(self.presid, 1)
-        b = vote.complete()
-        self.presid.remplissage_urne(b)
-        self.assertIsInstance(self.presid.urne[-1], dict)
-    #########################################################################
+    candidat1 = "Macron"
+    candidat2 = "Le Pen"
+    candidat3 = "Mélenchon"
+    @patch('builtins.input', side_effect=[candidat1, 1, ' ', candidat2, 2, ' ', candidat3, 3, 'y'])
+    def testRemplissage(self, mock_inputs):
+        vote = Bulletin(self.presid, 1, t=datetime.datetime(2022, 5, 20))
+        vote.complete()
+        self.presid.remplissage_urne(vote)
+        self.assertIsInstance(self.presid.urne[-1].bulletin, dict)
 
 class TestBulletin(unittest.TestCase):
     """
     Auteur : Jérémy LEMAITRE
     Description : Cette classe teste les méthodes de la classe Bulletin
     """
+
     def setUp(self):
         """
         Définition des instances utiles pour l'ensemble de la classe de test.
         """
         commencement = datetime.datetime(2022, 4, 10)
-        cloture = datetime.datetime(2022, 4, 25)
+        cloture = datetime.datetime(2022, 6, 25)
         self.presid = Election("Élections présidentielles", (commencement, cloture),
                           ["Macron", "Le Pen", "Mélenchon", "Zemmour", "Péceresse", "Jadot", "Lassalle", "Roussel",
                            "Dupont-Aignan", "Hidalgo", "Poutou", "Arthaud"], [i for i in range(100)], "condorcet")
@@ -97,7 +99,7 @@ class TestBulletin(unittest.TestCase):
         de la liste des électeurs.
         """
         b2 = Bulletin(self.presid, 2, t=datetime.datetime(2022, 4, 9))
-        b3 = Bulletin(self.presid, 3, t=datetime.datetime(2022, 4, 25, 1))
+        b3 = Bulletin(self.presid, 3, t=datetime.datetime(2022, 6, 25, 1))
         b4 = Bulletin(self.presid, 1001)
         test1 = self.b1.estvalide()
         test2 = b2.estvalide()
@@ -108,13 +110,15 @@ class TestBulletin(unittest.TestCase):
         self.assertFalse(test3)
         self.assertFalse(test4)
 
-    #########################################################################
-    # Ne fonctionne pas car unittest ne gère pas les inputs directement.
-    def testComplete(self):
+    candidat1 = "Macron"
+    candidat2 = "Le Pen"
+    candidat3 = "Mélenchon"
+
+    @patch('builtins.input', side_effect=[candidat1, 1, ' ', candidat2, 2, ' ', candidat3, 3, 'y'])
+    def testComplete(self, mock_inputs):
         self.b1.complete()
         self.assertIsInstance(self.b1.bulletin, dict)
         self.assertTrue(self.b1.rempli)
-    #########################################################################
 
 class TestListeElectorale(unittest.TestCase):
     """
