@@ -1,9 +1,15 @@
+import numpy as np
+from abc import ABCMeta, abstractmethod
 
-
-class Scrutin:
+class Scrutin(metaclass=ABCMeta):
 
     def __init__(self,candidats):
         self.candidats = []
+
+    @abstractmethod
+    def resultat(self):
+        """On sera obligé de définir une méthode 'resultat' pour chaque classe"""
+        pass
 
 
 class Condorcet(Scrutin):
@@ -72,6 +78,9 @@ class Condorcet(Scrutin):
                 vainqueurs.append(i)
         return vainqueurs
 
+    def resultat(self,urne):
+        return self.vainqueur_condorcet(self.confrontation2(urne))
+
 
 
 class JugementMajoritaire(Scrutin):
@@ -117,3 +126,6 @@ class JugementMajoritaire(Scrutin):
                     break
 
         return resultat
+
+    def resultat(self,urne):
+        return self.mention_majoritaire(self.resultats_candidat(urne))
