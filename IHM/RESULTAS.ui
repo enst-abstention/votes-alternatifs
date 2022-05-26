@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>719</width>
-    <height>483</height>
+    <width>635</width>
+    <height>825</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -16,15 +16,16 @@
   <widget class="QWidget" name="widget" native="true">
    <property name="geometry">
     <rect>
-     <x>0</x>
+     <x>-10</x>
      <y>0</y>
-     <width>1200</width>
-     <height>800</height>
+     <width>640</width>
+     <height>825</height>
     </rect>
    </property>
    <property name="styleSheet">
     <string notr="true">alternate-background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(0, 0, 0, 255), stop:1 rgba(255, 255, 255, 255));
-background-color: rgb(255, 88, 141);</string>
+background-color: rgb(255, 255, 0);
+background-color: #161219</string>
    </property>
    <widget class="QLabel" name="label_2">
     <property name="geometry">
@@ -71,14 +72,17 @@ color: rgb(255, 0, 0);</string>
    <widget class="QLabel" name="label">
     <property name="geometry">
      <rect>
-      <x>200</x>
-      <y>90</y>
-      <width>341</width>
+      <x>130</x>
+      <y>220</y>
+      <width>441</width>
       <height>41</height>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">font: 75 20pt &quot;MS Shell Dlg 2&quot;;</string>
+     <string notr="true">font: 8pt &quot;Kristen ITC&quot;;
+color: rgb(188, 0, 108);
+font: 20pt &quot;Kristen ITC&quot;;
+</string>
     </property>
     <property name="text">
      <string> ELECTION RESULTS</string>
@@ -87,14 +91,17 @@ color: rgb(255, 0, 0);</string>
    <widget class="QPushButton" name="pushButton">
     <property name="geometry">
      <rect>
-      <x>60</x>
-      <y>260</y>
+      <x>50</x>
+      <y>480</y>
       <width>231</width>
       <height>71</height>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">border-color: qconicalgradient(cx:0.5, cy:0.5, angle:0, stop:0 rgba(255, 255, 255, 255), stop:0.373979 rgba(255, 255, 255, 255), stop:0.373991 rgba(33, 30, 255, 255), stop:0.624018 rgba(33, 30, 255, 255), stop:0.624043 rgba(255, 0, 0, 255), stop:1 rgba(255, 0, 0, 255));</string>
+     <string notr="true">color: rgb(0, 0, 255);
+background-color: rgb(170, 255, 255);
+font: 10pt &quot;MS Shell Dlg 2&quot;;
+border-radius:20px;</string>
     </property>
     <property name="text">
      <string>CONDORCET</string>
@@ -103,14 +110,17 @@ color: rgb(255, 0, 0);</string>
    <widget class="QPushButton" name="pushButton_2">
     <property name="geometry">
      <rect>
-      <x>400</x>
-      <y>260</y>
-      <width>231</width>
+      <x>350</x>
+      <y>480</y>
+      <width>241</width>
       <height>71</height>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">border-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(255, 0, 0, 255), stop:0.166 rgba(255, 255, 0, 255), stop:0.333 rgba(0, 255, 0, 255), stop:0.5 rgba(0, 255, 255, 255), stop:0.666 rgba(0, 0, 255, 255), stop:0.833 rgba(255, 0, 255, 255), stop:1 rgba(255, 0, 0, 255));</string>
+     <string notr="true">color: rgb(0, 0, 255);
+background-color: rgb(170, 255, 255);
+font: 10pt &quot;MS Shell Dlg 2&quot;;
+border-radius:20px;</string>
     </property>
     <property name="text">
      <string>JUGEMENT MAJORITAIRE</string>

@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>952</width>
-    <height>507</height>
+    <width>636</width>
+    <height>824</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -18,13 +18,14 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1200</width>
-     <height>800</height>
+     <width>640</width>
+     <height>825</height>
     </rect>
    </property>
    <property name="styleSheet">
     <string notr="true">alternate-background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(0, 0, 0, 255), stop:1 rgba(255, 255, 255, 255));
-background-color: rgb(255, 88, 141);</string>
+background-color: rgb(255, 255, 0);
+background-color: #161219</string>
    </property>
    <widget class="QLabel" name="label_2">
     <property name="geometry">
@@ -71,14 +72,17 @@ color: rgb(255, 0, 0);</string>
    <widget class="QLabel" name="label">
     <property name="geometry">
      <rect>
-      <x>110</x>
-      <y>90</y>
-      <width>561</width>
+      <x>30</x>
+      <y>260</y>
+      <width>581</width>
       <height>41</height>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">font: 75 20pt &quot;MS Shell Dlg 2&quot;;</string>
+     <string notr="true">font: 8pt &quot;Kristen ITC&quot;;
+color: rgb(188, 0, 108);
+font: 16pt &quot;Kristen ITC&quot;;
+</string>
     </property>
     <property name="text">
      <string> ELECTION RESULTS BY CONDORCET</string>
@@ -92,6 +96,12 @@ color: rgb(255, 0, 0);</string>
       <width>93</width>
       <height>28</height>
      </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 8pt &quot;Kristen ITC&quot;;
+color: rgb(188, 0, 108);
+font: 8pt &quot;Kristen ITC&quot;;
+</string>
     </property>
     <property name="text">
      <string>HOME</string>

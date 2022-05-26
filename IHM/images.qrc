@@ -1,8 +1,11 @@
 <RCC>
-  <qresource prefix="image acceuil">
-    <file>new_image.png</file>
-  </qresource>
-  <qresource prefix="vraiimg">
+  <qresource prefix="photo1">
     <file>vraiimg.png</file>
+  </qresource>
+  <qresource prefix="photo 3">
+    <file>images.qrc</file>
+  </qresource>
+  <qresource prefix="photo 2 ">
+    <file>france3.png</file>
   </qresource>
 </RCC>
