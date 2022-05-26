@@ -100,6 +100,7 @@ border-radius:20px;</string>
     </property>
     <property name="styleSheet">
      <string notr="true">color: rgb(255, 255, 255);
+color: rgb(0, 0, 0);
 background-color: rgb(255, 255, 255);
 font: 12pt &quot;MS Shell Dlg 2&quot;;
 </string>
@@ -119,6 +120,7 @@ font: 12pt &quot;MS Shell Dlg 2&quot;;
     </property>
     <property name="styleSheet">
      <string notr="true">color: rgb(255, 255, 255);
+color: rgb(0, 0, 0);
 background-color: rgb(255, 255, 255);
 font: 12pt &quot;MS Shell Dlg 2&quot;;
 </string>
@@ -194,6 +196,7 @@ color: rgb(255, 0, 0);</string>
     </property>
     <property name="styleSheet">
      <string notr="true">color: rgb(255, 255, 255);
+color: rgb(0, 0, 0);
 background-color: rgb(255, 255, 255);
 font: 12pt &quot;MS Shell Dlg 2&quot;;
 </string>
@@ -229,6 +232,12 @@ font: 8pt &quot;Kristen ITC&quot;;
       <width>93</width>
       <height>28</height>
      </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 8pt &quot;Kristen ITC&quot;;
+color: rgb(188, 0, 108);
+font: 8pt &quot;Kristen ITC&quot;;
+</string>
     </property>
     <property name="text">
      <string>Back</string>

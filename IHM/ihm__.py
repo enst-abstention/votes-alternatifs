@@ -4,6 +4,10 @@ from PyQt5.QtWidgets import QDialog, QApplication,QStackedWidget,QWidget
 from python_files import elections as ele
 from python_files import scrutins as scr
 import sys
+from python_files.elections import *
+from python_files.scrutins import *
+# from  elections_sheick import *
+# from scrutins_sheick import *
 import sqlite3
 from PyQt5.QtGui import QPixmap
 
@@ -71,8 +75,6 @@ class CreateAccount(QDialog):
             self.label_5.setText("Please fill all the fields")
         elif confirmpass != password:
             self.label_5.setText("Invalid password")
-        else:
-
             modescrutin = ModeScrutin()
             widget.addWidget(modescrutin)
             widget.setCurrentIndex(widget.currentIndex() + 1)
@@ -254,10 +256,9 @@ if __name__=='__main__' :
     widget =QtWidgets.QStackedWidget()
     widget.addWidget(bienvenue)
 
-    # widget.setFixedHeight(825)
-    # widget.setFixedWidth(640)
-    widget.setFixedHeight(800)
-    widget.setFixedWidth(1000)
+    widget.setFixedHeight(825)
+    widget.setFixedWidth(640)
+
     widget.show()
     try:
         sys.exit(app.exec_())

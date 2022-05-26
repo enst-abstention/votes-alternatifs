@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>633</width>
-    <height>163</height>
+    <width>636</width>
+    <height>825</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -18,13 +18,14 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1200</width>
-     <height>800</height>
+     <width>640</width>
+     <height>825</height>
     </rect>
    </property>
    <property name="styleSheet">
     <string notr="true">alternate-background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(0, 0, 0, 255), stop:1 rgba(255, 255, 255, 255));
-background-color: rgb(255, 88, 141);</string>
+background-color: rgb(255, 255, 0);
+background-color: #161219</string>
    </property>
    <widget class="QLabel" name="label_5">
     <property name="geometry">
@@ -47,11 +48,17 @@ color: rgb(255, 0, 0);</string>
    <widget class="QPushButton" name="pushButton_2">
     <property name="geometry">
      <rect>
-      <x>350</x>
-      <y>100</y>
+      <x>460</x>
+      <y>520</y>
       <width>111</width>
       <height>28</height>
      </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 8pt &quot;Kristen ITC&quot;;
+color: rgb(188, 0, 108);
+font: 8pt &quot;Kristen ITC&quot;;
+</string>
     </property>
     <property name="text">
      <string>continue</string>
@@ -66,6 +73,12 @@ color: rgb(255, 0, 0);</string>
       <height>28</height>
      </rect>
     </property>
+    <property name="styleSheet">
+     <string notr="true">font: 8pt &quot;Kristen ITC&quot;;
+color: rgb(188, 0, 108);
+font: 8pt &quot;Kristen ITC&quot;;
+</string>
+    </property>
     <property name="text">
      <string>Back</string>
     </property>
@@ -73,11 +86,14 @@ color: rgb(255, 0, 0);</string>
    <widget class="QLabel" name="label_6">
     <property name="geometry">
      <rect>
-      <x>0</x>
-      <y>45</y>
+      <x>100</x>
+      <y>380</y>
       <width>461</width>
       <height>31</height>
      </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(255, 255, 0);</string>
     </property>
     <property name="text">
      <string>Now, please fill your profile, so that we confirm you are eligible to vote or not</string>

@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>918</width>
-    <height>669</height>
+    <width>639</width>
+    <height>830</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -18,8 +18,8 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1200</width>
-     <height>800</height>
+     <width>640</width>
+     <height>825</height>
     </rect>
    </property>
    <property name="styleSheet">
@@ -72,8 +72,8 @@ color: rgb(255, 0, 0);</string>
    <widget class="QLabel" name="label">
     <property name="geometry">
      <rect>
-      <x>310</x>
-      <y>120</y>
+      <x>30</x>
+      <y>90</y>
       <width>571</width>
       <height>41</height>
      </rect>
@@ -91,11 +91,14 @@ font: 24pt &quot;Kristen ITC&quot;;
    <widget class="QLabel" name="label_3">
     <property name="geometry">
      <rect>
-      <x>290</x>
-      <y>160</y>
+      <x>60</x>
+      <y>140</y>
       <width>421</width>
       <height>31</height>
      </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(255, 255, 0);</string>
     </property>
     <property name="text">
      <string>                                  Rank  your candidate</string>
@@ -125,7 +128,7 @@ font: 8pt &quot;Kristen ITC&quot;;
      <rect>
       <x>72</x>
       <y>271</y>
-      <width>151</width>
+      <width>91</width>
       <height>41</height>
      </rect>
     </property>
@@ -138,9 +141,9 @@ background-color: rgb(52, 86, 127);</string>
    <widget class="QComboBox" name="comboBox_2">
     <property name="geometry">
      <rect>
-      <x>350</x>
+      <x>260</x>
       <y>270</y>
-      <width>151</width>
+      <width>101</width>
       <height>41</height>
      </rect>
     </property>
@@ -153,9 +156,9 @@ background-color: rgb(52, 86, 127);</string>
    <widget class="QComboBox" name="comboBox_3">
     <property name="geometry">
      <rect>
-      <x>630</x>
+      <x>480</x>
       <y>270</y>
-      <width>151</width>
+      <width>111</width>
       <height>41</height>
      </rect>
     </property>
@@ -170,7 +173,7 @@ background-color: rgb(52, 86, 127);</string>
      <rect>
       <x>70</x>
       <y>360</y>
-      <width>151</width>
+      <width>91</width>
       <height>41</height>
      </rect>
     </property>
@@ -183,9 +186,9 @@ background-color: rgb(52, 86, 127);</string>
    <widget class="QComboBox" name="comboBox_5">
     <property name="geometry">
      <rect>
-      <x>350</x>
+      <x>260</x>
       <y>360</y>
-      <width>151</width>
+      <width>101</width>
       <height>41</height>
      </rect>
     </property>
@@ -198,9 +201,9 @@ background-color: rgb(52, 86, 127);</string>
    <widget class="QComboBox" name="comboBox_6">
     <property name="geometry">
      <rect>
-      <x>630</x>
-      <y>360</y>
-      <width>151</width>
+      <x>480</x>
+      <y>350</y>
+      <width>111</width>
       <height>41</height>
      </rect>
     </property>
@@ -215,7 +218,7 @@ background-color: rgb(52, 86, 127);</string>
      <rect>
       <x>70</x>
       <y>450</y>
-      <width>151</width>
+      <width>91</width>
       <height>41</height>
      </rect>
     </property>
@@ -228,9 +231,9 @@ background-color: rgb(52, 86, 127);</string>
    <widget class="QComboBox" name="comboBox_8">
     <property name="geometry">
      <rect>
-      <x>350</x>
-      <y>440</y>
-      <width>151</width>
+      <x>260</x>
+      <y>450</y>
+      <width>101</width>
       <height>41</height>
      </rect>
     </property>
@@ -243,9 +246,9 @@ background-color: rgb(52, 86, 127);</string>
    <widget class="QComboBox" name="comboBox_9">
     <property name="geometry">
      <rect>
-      <x>630</x>
-      <y>440</y>
-      <width>151</width>
+      <x>480</x>
+      <y>450</y>
+      <width>111</width>
       <height>41</height>
      </rect>
     </property>
@@ -260,7 +263,7 @@ background-color: rgb(52, 86, 127);</string>
      <rect>
       <x>70</x>
       <y>540</y>
-      <width>151</width>
+      <width>91</width>
       <height>41</height>
      </rect>
     </property>
@@ -273,9 +276,9 @@ background-color: rgb(52, 86, 127);</string>
    <widget class="QComboBox" name="comboBox_11">
     <property name="geometry">
      <rect>
-      <x>350</x>
-      <y>530</y>
-      <width>151</width>
+      <x>260</x>
+      <y>540</y>
+      <width>101</width>
       <height>41</height>
      </rect>
     </property>
@@ -288,9 +291,9 @@ background-color: rgb(52, 86, 127);</string>
    <widget class="QComboBox" name="comboBox_12">
     <property name="geometry">
      <rect>
-      <x>630</x>
-      <y>530</y>
-      <width>151</width>
+      <x>480</x>
+      <y>540</y>
+      <width>111</width>
       <height>41</height>
      </rect>
     </property>
@@ -303,7 +306,7 @@ background-color: rgb(52, 86, 127);</string>
    <widget class="QLabel" name="label_6">
     <property name="geometry">
      <rect>
-      <x>0</x>
+      <x>10</x>
       <y>280</y>
       <width>55</width>
       <height>16</height>
@@ -322,10 +325,10 @@ font: 8pt &quot;Kristen ITC&quot;;
    <widget class="QLabel" name="label_7">
     <property name="geometry">
      <rect>
-      <x>0</x>
+      <x>10</x>
       <y>370</y>
       <width>55</width>
-      <height>16</height>
+      <height>20</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -341,7 +344,7 @@ font: 8pt &quot;Kristen ITC&quot;;
    <widget class="QLabel" name="label_8">
     <property name="geometry">
      <rect>
-      <x>0</x>
+      <x>10</x>
       <y>460</y>
       <width>55</width>
       <height>16</height>
@@ -360,7 +363,7 @@ font: 8pt &quot;Kristen ITC&quot;;
    <widget class="QLabel" name="label_9">
     <property name="geometry">
      <rect>
-      <x>0</x>
+      <x>10</x>
       <y>550</y>
       <width>55</width>
       <height>16</height>
@@ -379,9 +382,9 @@ font: 8pt &quot;Kristen ITC&quot;;
    <widget class="QLabel" name="label_10">
     <property name="geometry">
      <rect>
-      <x>280</x>
+      <x>220</x>
       <y>280</y>
-      <width>55</width>
+      <width>41</width>
       <height>16</height>
      </rect>
     </property>
@@ -398,9 +401,9 @@ font: 8pt &quot;Kristen ITC&quot;;
    <widget class="QLabel" name="label_11">
     <property name="geometry">
      <rect>
-      <x>280</x>
+      <x>210</x>
       <y>370</y>
-      <width>55</width>
+      <width>41</width>
       <height>16</height>
      </rect>
     </property>
@@ -417,9 +420,9 @@ font: 8pt &quot;Kristen ITC&quot;;
    <widget class="QLabel" name="label_12">
     <property name="geometry">
      <rect>
-      <x>280</x>
-      <y>450</y>
-      <width>55</width>
+      <x>210</x>
+      <y>460</y>
+      <width>41</width>
       <height>16</height>
      </rect>
     </property>
@@ -436,9 +439,9 @@ font: 8pt &quot;Kristen ITC&quot;;
    <widget class="QLabel" name="label_13">
     <property name="geometry">
      <rect>
-      <x>280</x>
-      <y>540</y>
-      <width>55</width>
+      <x>210</x>
+      <y>550</y>
+      <width>41</width>
       <height>16</height>
      </rect>
     </property>
@@ -455,9 +458,9 @@ font: 8pt &quot;Kristen ITC&quot;;
    <widget class="QLabel" name="label_14">
     <property name="geometry">
      <rect>
-      <x>560</x>
+      <x>420</x>
       <y>280</y>
-      <width>55</width>
+      <width>41</width>
       <height>16</height>
      </rect>
     </property>
@@ -474,9 +477,9 @@ font: 8pt &quot;Kristen ITC&quot;;
    <widget class="QLabel" name="label_15">
     <property name="geometry">
      <rect>
-      <x>560</x>
-      <y>370</y>
-      <width>55</width>
+      <x>420</x>
+      <y>360</y>
+      <width>51</width>
       <height>16</height>
      </rect>
     </property>
@@ -493,8 +496,8 @@ font: 8pt &quot;Kristen ITC&quot;;
    <widget class="QLabel" name="label_16">
     <property name="geometry">
      <rect>
-      <x>560</x>
-      <y>450</y>
+      <x>410</x>
+      <y>460</y>
       <width>55</width>
       <height>16</height>
      </rect>
@@ -512,8 +515,8 @@ font: 8pt &quot;Kristen ITC&quot;;
    <widget class="QLabel" name="label_17">
     <property name="geometry">
      <rect>
-      <x>560</x>
-      <y>540</y>
+      <x>400</x>
+      <y>550</y>
       <width>55</width>
       <height>16</height>
      </rect>
@@ -550,9 +553,9 @@ font: 8pt &quot;Kristen ITC&quot;;
    <widget class="QPushButton" name="pushButton_2">
     <property name="geometry">
      <rect>
-      <x>800</x>
-      <y>620</y>
-      <width>93</width>
+      <x>260</x>
+      <y>660</y>
+      <width>321</width>
       <height>28</height>
      </rect>
     </property>
@@ -563,7 +566,7 @@ font: 8pt &quot;Kristen ITC&quot;;
 </string>
     </property>
     <property name="text">
-     <string>continue</string>
+     <string>DEPOSER MON BULLETIN DANS L'URNE</string>
     </property>
    </widget>
   </widget>
