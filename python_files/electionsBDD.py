@@ -81,7 +81,7 @@ class ListeElectorale():
         self.__bdd.commit()
 
 
-class Election:
+class Election():
     """
     Auteur : Jérémy LEMAITRE
     Description : La classe Election permet de définir une unique élection avec les
@@ -222,7 +222,7 @@ class Election:
         print("\t Pour plus d'information cliquer sur 'afficher les statistiques'.")
 
 
-class Bulletin:
+class Bulletin():
     """
     Auteur : Jérémy LEMAITRE
     Description : Représente le bulletin qu'un électeur rempli et dépose dans l'urne.

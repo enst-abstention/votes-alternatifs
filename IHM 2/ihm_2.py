@@ -1,3 +1,5 @@
+import os.path
+
 from PyQt5.uic import loadUi
 from PyQt5 import QtWidgets
 from PyQt5.QtWidgets import QDialog, QApplication,QStackedWidget,QWidget
@@ -13,7 +15,7 @@ class PemierePage(QDialog) :
 
     def __init__(self):
         super(PemierePage,self).__init__()
-        loadUi("premierepage.ui",self)
+        loadUi(os.path.join("..", "IHM", "premierepage.ui"),self)
         self.bouton_voter.clicked.connect(self.goto_voter)
         self.bouton_creerelection.clicked.connect(self.goto_creer_election)
         self.bouton_afficherresultat.clicked.connect(self.goto_afficher_resultats)
@@ -42,21 +44,22 @@ class Voter(QDialog):
         self.bouton_continuer.clicked.connect(self.goto_scrutin)
 
     def goto_scrutin(self):
+        election = Election("electionTest",(datetime.datetime(2022,5,11),datetime.datetime(2022,6,11)), "electionTest", "Condorcet")
         identifiants = self.lineEdit.text()
         mot_de_passe = self.lineEdit_2.text()
-        conn = sqlite3.connect("(le nom de la base de donnee)")
+        conn = sqlite3.connect(os.path.join("..", "BDDs", "electionTest"))
         cur = conn.cursor()
-        query = 'SELECT mot_de_passe from (nom de la table) where identifiants=\''+identifiants+'\''
+        query = "SELECT mdp from Electeurs where idElecteur={}".format(identifiants)
         cur.execute(query)
         result_pass = cur.fetchone()[0]
-        if result_pass == mot_de_passe  : # Le code risque de pas fonctionner a cause de cette partie
-            if #mode de scrutin condorcet : # parce que je sais pas quel nom tu as donne a ta base de donnee
+        if result_pass == mot_de_passe :
+            if type(election.scrutin) == Condorcet :
                 condorcet = Condorcet()
                 widget.addWidget(condorcet)
                 widget.setCurrentIndex(widget.currentIndex() + 1)
             else :
-                jujement = JujementMajoritaire()
-                widget.addWidget(jujement)
+                jugement = JugementMajoritaire()
+                widget.addWidget(jugement)
                 widget.setCurrentIndex(widget.currentIndex() + 1)
         else :
             self.label_4.setText("Idendifiants incorrects: vous n'êtes pas autoriser à voter !")
