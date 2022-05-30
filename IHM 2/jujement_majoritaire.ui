@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>640</width>
-    <height>0</height>
+    <width>639</width>
+    <height>824</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -92,8 +92,8 @@ font: 8pt &quot;Kristen ITC&quot;;</string>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">font: 8pt &quot;Kristen ITC&quot;;
-color: rgb(0, 0, 0);
+     <string notr="true">color: rgb(0, 85, 0);
+font: 8pt &quot;Kristen ITC&quot;;
 font: 8pt &quot;Kristen ITC&quot;;
 </string>
     </property>
