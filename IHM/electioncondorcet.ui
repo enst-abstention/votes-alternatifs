@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>639</width>
-    <height>830</height>
+    <width>627</width>
+    <height>780</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -19,13 +19,11 @@
      <x>0</x>
      <y>0</y>
      <width>640</width>
-     <height>825</height>
+     <height>782</height>
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">alternate-background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(0, 0, 0, 255), stop:1 rgba(255, 255, 255, 255));
-background-color: rgb(255, 255, 0);
-background-color: #161219</string>
+    <string notr="true">background-image: url(:/urne/urnnne.jpg);</string>
    </property>
    <widget class="QLabel" name="label_2">
     <property name="geometry">
@@ -80,7 +78,9 @@ color: rgb(255, 0, 0);</string>
     </property>
     <property name="styleSheet">
      <string notr="true">font: 8pt &quot;Kristen ITC&quot;;
-color: rgb(188, 0, 108);
+border-color: rgb(170, 0, 0);
+color: rgb(0, 0, 0);
+border-color: rgb(0, 85, 0);
 font: 24pt &quot;Kristen ITC&quot;;
 </string>
     </property>
@@ -531,7 +531,7 @@ font: 8pt &quot;Kristen ITC&quot;;
      <string>         12</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton">
+   <widget class="QPushButton" name="bouton_retour">
     <property name="geometry">
      <rect>
       <x>10</x>
@@ -550,7 +550,7 @@ font: 8pt &quot;Kristen ITC&quot;;
      <string>Back</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_2">
+   <widget class="QPushButton" name="bouton_deposer_urne">
     <property name="geometry">
      <rect>
       <x>260</x>
@@ -571,6 +571,10 @@ font: 8pt &quot;Kristen ITC&quot;;
    </widget>
   </widget>
  </widget>
- <resources/>
+ <resources>
+  <include location="ui.qrc"/>
+  <include location="urne.qrc"/>
+  <include location="sjxn.qrc"/>
+ </resources>
  <connections/>
 </ui>
