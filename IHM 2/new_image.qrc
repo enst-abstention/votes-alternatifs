@@ -1,0 +1,8 @@
+<RCC>
+  <qresource prefix="image1">
+    <file>france2.jpg</file>
+  </qresource>
+  <qresource prefix="newPrefix">
+    <file>../IHM/vrai_urne.jpg</file>
+  </qresource>
+</RCC>
