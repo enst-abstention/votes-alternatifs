@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>413</width>
-    <height>593</height>
+    <width>642</width>
+    <height>745</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -18,55 +18,18 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>410</width>
-     <height>590</height>
+     <width>640</width>
+     <height>748</height>
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true"/>
+    <string notr="true">background-image: url(:/5/validess.jpg);</string>
    </property>
-   <widget class="QLabel" name="label_5">
-    <property name="geometry">
-     <rect>
-      <x>470</x>
-      <y>430</y>
-      <width>221</width>
-      <height>20</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">font: 12pt &quot;MS Shell Dlg 2&quot;;
-color: rgb(255, 0, 0);
-color: rgb(255, 0, 0);</string>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="pushButton">
-    <property name="geometry">
-     <rect>
-      <x>390</x>
-      <y>660</y>
-      <width>93</width>
-      <height>28</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">font: 8pt &quot;Kristen ITC&quot;;
-color: rgb(188, 0, 108);
-font: 8pt &quot;Kristen ITC&quot;;
-</string>
-    </property>
-    <property name="text">
-     <string>Valider</string>
-    </property>
-   </widget>
    <widget class="QTextEdit" name="textEdit">
     <property name="geometry">
      <rect>
-      <x>50</x>
-      <y>160</y>
+      <x>170</x>
+      <y>220</y>
       <width>271</width>
       <height>61</height>
      </rect>
@@ -84,8 +47,8 @@ p, li { white-space: pre-wrap; }
    <widget class="QWidget" name="horizontalLayoutWidget">
     <property name="geometry">
      <rect>
-      <x>50</x>
-      <y>320</y>
+      <x>150</x>
+      <y>430</y>
       <width>301</width>
       <height>41</height>
      </rect>
@@ -122,6 +85,8 @@ p, li { white-space: pre-wrap; }
    </widget>
   </widget>
  </widget>
- <resources/>
+ <resources>
+  <include location="../IHM/5.qrc"/>
+ </resources>
  <connections/>
 </ui>

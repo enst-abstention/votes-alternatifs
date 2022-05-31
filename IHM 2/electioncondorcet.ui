@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>639</width>
-    <height>830</height>
+    <width>638</width>
+    <height>779</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -19,13 +19,11 @@
      <x>0</x>
      <y>0</y>
      <width>640</width>
-     <height>825</height>
+     <height>782</height>
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">alternate-background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(0, 0, 0, 255), stop:1 rgba(255, 255, 255, 255));
-background-color: rgb(255, 255, 0);
-background-color: #161219</string>
+    <string notr="true">background-image: url(:/8/urnnne.jpg);</string>
    </property>
    <widget class="QLabel" name="label_2">
     <property name="geometry">
@@ -74,13 +72,15 @@ color: rgb(255, 0, 0);</string>
      <rect>
       <x>30</x>
       <y>90</y>
-      <width>571</width>
+      <width>551</width>
       <height>41</height>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">font: 8pt &quot;Kristen ITC&quot;;
-color: rgb(188, 0, 108);
+     <string notr="true">color: rgb(0, 0, 0);
+alternate-background-color: rgb(93, 93, 93);
+background-color: rgb(113, 113, 113);
+font: 8pt &quot;Kristen ITC&quot;;
 font: 24pt &quot;Kristen ITC&quot;;
 </string>
     </property>
@@ -91,17 +91,19 @@ font: 24pt &quot;Kristen ITC&quot;;
    <widget class="QLabel" name="label_3">
     <property name="geometry">
      <rect>
-      <x>60</x>
-      <y>140</y>
-      <width>421</width>
+      <x>220</x>
+      <y>130</y>
+      <width>151</width>
       <height>31</height>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">color: rgb(255, 255, 0);</string>
+     <string notr="true">color: rgb(0, 85, 0);
+font: 8pt &quot;Kristen ITC&quot;;
+font: 8pt &quot;Kristen ITC&quot;;</string>
     </property>
     <property name="text">
-     <string>                                  Rank  your candidate</string>
+     <string>Classez vos candidats</string>
     </property>
    </widget>
    <widget class="QLabel" name="label_4">
@@ -114,13 +116,12 @@ font: 24pt &quot;Kristen ITC&quot;;
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">font: 8pt &quot;Kristen ITC&quot;;
-color: rgb(188, 0, 108);
+     <string notr="true">color: rgb(0, 85, 0);
 font: 8pt &quot;Kristen ITC&quot;;
-</string>
+font: 8pt &quot;Kristen ITC&quot;;</string>
     </property>
     <property name="text">
-     <string>Scrutin mode : condorcet</string>
+     <string>Mode de scrutin : condorcet</string>
     </property>
    </widget>
    <widget class="QComboBox" name="comboBox">
@@ -382,7 +383,7 @@ font: 8pt &quot;Kristen ITC&quot;;
    <widget class="QLabel" name="label_10">
     <property name="geometry">
      <rect>
-      <x>220</x>
+      <x>210</x>
       <y>280</y>
       <width>41</width>
       <height>16</height>
@@ -404,7 +405,7 @@ font: 8pt &quot;Kristen ITC&quot;;
       <x>210</x>
       <y>370</y>
       <width>41</width>
-      <height>16</height>
+      <height>20</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -542,12 +543,13 @@ font: 8pt &quot;Kristen ITC&quot;;
     </property>
     <property name="styleSheet">
      <string notr="true">font: 8pt &quot;Kristen ITC&quot;;
-color: rgb(188, 0, 108);
+color: rgb(0, 0, 0);
 font: 8pt &quot;Kristen ITC&quot;;
+
 </string>
     </property>
     <property name="text">
-     <string>Back</string>
+     <string>Retour </string>
     </property>
    </widget>
    <widget class="QPushButton" name="pushButton_2">
@@ -561,8 +563,10 @@ font: 8pt &quot;Kristen ITC&quot;;
     </property>
     <property name="styleSheet">
      <string notr="true">font: 8pt &quot;Kristen ITC&quot;;
-color: rgb(188, 0, 108);
+font: 75 8pt &quot;MS Shell Dlg 2&quot;;
+color: rgb(0, 0, 0);
 font: 8pt &quot;Kristen ITC&quot;;
+
 </string>
     </property>
     <property name="text">
@@ -571,6 +575,8 @@ font: 8pt &quot;Kristen ITC&quot;;
    </widget>
   </widget>
  </widget>
- <resources/>
+ <resources>
+  <include location="../IHM/8.qrc"/>
+ </resources>
  <connections/>
 </ui>

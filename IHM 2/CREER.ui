@@ -6,21 +6,32 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>540</width>
-    <height>616</height>
+    <width>640</width>
+    <height>748</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">background-image: url(:/newPrefix/IHM/urneess.jpg);</string>
+  </property>
   <widget class="QLabel" name="label">
    <property name="geometry">
     <rect>
-     <x>100</x>
+     <x>80</x>
      <y>70</y>
-     <width>131</width>
-     <height>31</height>
+     <width>521</width>
+     <height>51</height>
     </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(0, 0, 0);
+alternate-background-color: rgb(93, 93, 93);
+background-color: rgb(113, 113, 113);
+font: 8pt &quot;Kristen ITC&quot;;
+font: 24pt &quot;Kristen ITC&quot;;
+</string>
    </property>
    <property name="text">
     <string>CREER UNE ELECTION</string>
@@ -57,7 +68,11 @@
      </spacer>
     </item>
     <item>
-     <widget class="QLineEdit" name="lineEdit"/>
+     <widget class="QLineEdit" name="lineEdit">
+      <property name="styleSheet">
+       <string notr="true">color: rgb(255, 255, 255);</string>
+      </property>
+     </widget>
     </item>
    </layout>
   </widget>
@@ -214,8 +229,8 @@
   <widget class="QPushButton" name="pushButton">
    <property name="geometry">
     <rect>
-     <x>362</x>
-     <y>550</y>
+     <x>410</x>
+     <y>580</y>
      <width>141</width>
      <height>28</height>
     </rect>
@@ -225,6 +240,9 @@
    </property>
   </widget>
  </widget>
- <resources/>
+ <resources>
+  <include location="2.qrc"/>
+  <include location="3.qrc"/>
+ </resources>
  <connections/>
 </ui>

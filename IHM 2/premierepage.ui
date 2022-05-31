@@ -6,12 +6,15 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>410</width>
-    <height>590</height>
+    <width>648</width>
+    <height>0</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Dialog</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-image: url(:/1/IHM/urneess.jpg);</string>
   </property>
   <widget class="QWidget" name="verticalLayoutWidget">
    <property name="geometry">
@@ -84,6 +87,8 @@
    </layout>
   </widget>
  </widget>
- <resources/>
+ <resources>
+  <include location="1.qrc"/>
+ </resources>
  <connections/>
 </ui>

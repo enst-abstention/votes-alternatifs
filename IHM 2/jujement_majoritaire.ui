@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>644</width>
-    <height>823</height>
+    <width>639</width>
+    <height>824</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -23,34 +23,8 @@
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">alternate-background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(0, 0, 0, 255), stop:1 rgba(255, 255, 255, 255));
-background-color: rgb(255, 255, 0);
-background-color: #161219</string>
+    <string notr="true">background-image: url(:/7/urnnne.jpg);</string>
    </property>
-   <widget class="QLabel" name="label_2">
-    <property name="geometry">
-     <rect>
-      <x>400</x>
-      <y>209</y>
-      <width>331</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">font: 75 italic 8pt &quot;Rockwell&quot;;
-color: rgb(255, 255, 255);
-color: rgb(255, 255, 255);
-font: 75 italic 8pt &quot;Arial Nova Cond&quot;;
-gridline-color: rgb(200, 89, 189);
-color: rgb(0, 0, 255);
-color: rgb(170, 0, 0);
-color: rgb(85, 170, 255);
-color: rgb(255, 255, 0);</string>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-   </widget>
    <widget class="QLabel" name="label_5">
     <property name="geometry">
      <rect>
@@ -74,34 +48,38 @@ color: rgb(255, 0, 0);</string>
      <rect>
       <x>60</x>
       <y>100</y>
-      <width>551</width>
+      <width>451</width>
       <height>41</height>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">font: 8pt &quot;Kristen ITC&quot;;
-color: rgb(188, 0, 108);
+     <string notr="true">color: rgb(0, 0, 0);
+alternate-background-color: rgb(93, 93, 93);
+background-color: rgb(113, 113, 113);
+font: 8pt &quot;Kristen ITC&quot;;
 font: 24pt &quot;Kristen ITC&quot;;
 </string>
     </property>
     <property name="text">
-     <string>Election Présidentielle 2022</string>
+     <string>Election Présidentielle</string>
     </property>
    </widget>
    <widget class="QLabel" name="label_3">
     <property name="geometry">
      <rect>
-      <x>70</x>
-      <y>150</y>
-      <width>421</width>
+      <x>130</x>
+      <y>140</y>
+      <width>271</width>
       <height>31</height>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">color: rgb(255, 255, 0);</string>
+     <string notr="true">color: rgb(0, 85, 0);
+font: 8pt &quot;Kristen ITC&quot;;
+font: 8pt &quot;Kristen ITC&quot;;</string>
     </property>
     <property name="text">
-     <string>                                  Give a mention to each candidate</string>
+     <string>Attribuez une mention a chaque candidat</string>
     </property>
    </widget>
    <widget class="QLabel" name="label_4">
@@ -109,18 +87,18 @@ font: 24pt &quot;Kristen ITC&quot;;
      <rect>
       <x>20</x>
       <y>190</y>
-      <width>241</width>
+      <width>261</width>
       <height>51</height>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">font: 8pt &quot;Kristen ITC&quot;;
-color: rgb(188, 0, 108);
+     <string notr="true">color: rgb(0, 85, 0);
+font: 8pt &quot;Kristen ITC&quot;;
 font: 8pt &quot;Kristen ITC&quot;;
 </string>
     </property>
     <property name="text">
-     <string>Scrutin mode : Jugement Majoritaire</string>
+     <string>Mode de scrutin : Jugement Majoritaire</string>
     </property>
    </widget>
    <widget class="QComboBox" name="comboBox">
@@ -307,15 +285,15 @@ background-color: rgb(52, 86, 127);</string>
    <widget class="QLabel" name="label_6">
     <property name="geometry">
      <rect>
-      <x>0</x>
+      <x>4</x>
       <y>280</y>
-      <width>55</width>
-      <height>16</height>
+      <width>51</width>
+      <height>20</height>
      </rect>
     </property>
     <property name="styleSheet">
      <string notr="true">font: 8pt &quot;Kristen ITC&quot;;
-color: rgb(188, 0, 108);
+color: rgb(170, 0, 0);
 font: 8pt &quot;Kristen ITC&quot;;
 </string>
     </property>
@@ -334,8 +312,9 @@ font: 8pt &quot;Kristen ITC&quot;;
     </property>
     <property name="styleSheet">
      <string notr="true">font: 8pt &quot;Kristen ITC&quot;;
-color: rgb(188, 0, 108);
+color: rgb(170, 0, 0);
 font: 8pt &quot;Kristen ITC&quot;;
+
 </string>
     </property>
     <property name="text">
@@ -353,7 +332,7 @@ font: 8pt &quot;Kristen ITC&quot;;
     </property>
     <property name="styleSheet">
      <string notr="true">font: 8pt &quot;Kristen ITC&quot;;
-color: rgb(188, 0, 108);
+color: rgb(170, 0, 0);
 font: 8pt &quot;Kristen ITC&quot;;
 </string>
     </property>
@@ -372,8 +351,9 @@ font: 8pt &quot;Kristen ITC&quot;;
     </property>
     <property name="styleSheet">
      <string notr="true">font: 8pt &quot;Kristen ITC&quot;;
-color: rgb(188, 0, 108);
+color: rgb(170, 0, 0);
 font: 8pt &quot;Kristen ITC&quot;;
+
 </string>
     </property>
     <property name="text">
@@ -391,7 +371,7 @@ font: 8pt &quot;Kristen ITC&quot;;
     </property>
     <property name="styleSheet">
      <string notr="true">font: 8pt &quot;Kristen ITC&quot;;
-color: rgb(188, 0, 108);
+color: rgb(170, 0, 0);
 font: 8pt &quot;Kristen ITC&quot;;
 </string>
     </property>
@@ -410,8 +390,9 @@ font: 8pt &quot;Kristen ITC&quot;;
     </property>
     <property name="styleSheet">
      <string notr="true">font: 8pt &quot;Kristen ITC&quot;;
-color: rgb(188, 0, 108);
+color: rgb(170, 0, 0);
 font: 8pt &quot;Kristen ITC&quot;;
+
 </string>
     </property>
     <property name="text">
@@ -429,7 +410,7 @@ font: 8pt &quot;Kristen ITC&quot;;
     </property>
     <property name="styleSheet">
      <string notr="true">font: 8pt &quot;Kristen ITC&quot;;
-color: rgb(188, 0, 108);
+color: rgb(170, 0, 0);
 font: 8pt &quot;Kristen ITC&quot;;
 </string>
     </property>
@@ -440,7 +421,7 @@ font: 8pt &quot;Kristen ITC&quot;;
    <widget class="QLabel" name="label_13">
     <property name="geometry">
      <rect>
-      <x>170</x>
+      <x>180</x>
       <y>550</y>
       <width>55</width>
       <height>16</height>
@@ -448,8 +429,9 @@ font: 8pt &quot;Kristen ITC&quot;;
     </property>
     <property name="styleSheet">
      <string notr="true">font: 8pt &quot;Kristen ITC&quot;;
-color: rgb(188, 0, 108);
+color: rgb(170, 0, 0);
 font: 8pt &quot;Kristen ITC&quot;;
+
 </string>
     </property>
     <property name="text">
@@ -460,14 +442,14 @@ font: 8pt &quot;Kristen ITC&quot;;
     <property name="geometry">
      <rect>
       <x>390</x>
-      <y>270</y>
+      <y>280</y>
       <width>55</width>
       <height>16</height>
      </rect>
     </property>
     <property name="styleSheet">
      <string notr="true">font: 8pt &quot;Kristen ITC&quot;;
-color: rgb(188, 0, 108);
+color: rgb(170, 0, 0);
 font: 8pt &quot;Kristen ITC&quot;;
 </string>
     </property>
@@ -486,8 +468,9 @@ font: 8pt &quot;Kristen ITC&quot;;
     </property>
     <property name="styleSheet">
      <string notr="true">font: 8pt &quot;Kristen ITC&quot;;
-color: rgb(188, 0, 108);
+color: rgb(170, 0, 0);
 font: 8pt &quot;Kristen ITC&quot;;
+
 </string>
     </property>
     <property name="text">
@@ -497,15 +480,15 @@ font: 8pt &quot;Kristen ITC&quot;;
    <widget class="QLabel" name="label_16">
     <property name="geometry">
      <rect>
-      <x>380</x>
-      <y>460</y>
+      <x>390</x>
+      <y>450</y>
       <width>55</width>
       <height>16</height>
      </rect>
     </property>
     <property name="styleSheet">
      <string notr="true">font: 8pt &quot;Kristen ITC&quot;;
-color: rgb(188, 0, 108);
+color: rgb(170, 0, 0);
 font: 8pt &quot;Kristen ITC&quot;;
 </string>
     </property>
@@ -516,7 +499,7 @@ font: 8pt &quot;Kristen ITC&quot;;
    <widget class="QLabel" name="label_17">
     <property name="geometry">
      <rect>
-      <x>370</x>
+      <x>400</x>
       <y>550</y>
       <width>55</width>
       <height>16</height>
@@ -524,8 +507,9 @@ font: 8pt &quot;Kristen ITC&quot;;
     </property>
     <property name="styleSheet">
      <string notr="true">font: 8pt &quot;Kristen ITC&quot;;
-color: rgb(188, 0, 108);
+color: rgb(170, 0, 0);
 font: 8pt &quot;Kristen ITC&quot;;
+
 </string>
     </property>
     <property name="text">
@@ -543,26 +527,27 @@ font: 8pt &quot;Kristen ITC&quot;;
     </property>
     <property name="styleSheet">
      <string notr="true">font: 8pt &quot;Kristen ITC&quot;;
-color: rgb(188, 0, 108);
+color: rgb(0, 0, 0);
 font: 8pt &quot;Kristen ITC&quot;;
 </string>
     </property>
     <property name="text">
-     <string>Back</string>
+     <string>Retour</string>
     </property>
    </widget>
    <widget class="QPushButton" name="pushButton_2">
     <property name="geometry">
      <rect>
       <x>230</x>
-      <y>640</y>
+      <y>660</y>
       <width>301</width>
       <height>28</height>
      </rect>
     </property>
     <property name="styleSheet">
      <string notr="true">font: 8pt &quot;Kristen ITC&quot;;
-color: rgb(188, 0, 108);
+font: 75 8pt &quot;MS Shell Dlg 2&quot;;
+color: rgb(0, 0, 0);
 font: 8pt &quot;Kristen ITC&quot;;
 </string>
     </property>
@@ -572,6 +557,8 @@ font: 8pt &quot;Kristen ITC&quot;;
    </widget>
   </widget>
  </widget>
- <resources/>
+ <resources>
+  <include location="../IHM/7.qrc"/>
+ </resources>
  <connections/>
 </ui>
