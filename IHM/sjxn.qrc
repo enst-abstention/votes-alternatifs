@@ -1,0 +1,5 @@
+<RCC>
+  <qresource prefix="newPrefix">
+    <file>election_box _redimensionné1.jpg</file>
+  </qresource>
+</RCC>
